@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" id="o55-So-TVT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AYx-eK-A1M">
                             <connections>
-                                <segue destination="g38-yM-yEo" kind="show" id="qoU-e7-4uF"/>
+                                <segue destination="g38-yM-yEo" kind="show" identifier="spiceSegue" id="qoU-e7-4uF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -87,14 +87,24 @@
                                     <action selector="addCollectionBtn:" destination="g38-yM-yEo" eventType="touchUpInside" id="vpQ-9P-UuM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-lj-OE4">
+                                <rect key="frame" x="164.5" y="364" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addCollectionBtn:" destination="g38-yM-yEo" eventType="touchUpInside" id="bVw-8M-Wio"/>
+                                    <action selector="deleteCollectionBtn:" destination="g38-yM-yEo" eventType="touchUpInside" id="lNn-ci-2aI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2L5-mQ-fNK" firstAttribute="top" secondItem="3vt-ld-h7K" secondAttribute="bottom" constant="30" id="6Wc-rV-Tfl"/>
                             <constraint firstItem="2L5-mQ-fNK" firstAttribute="width" secondItem="3vt-ld-h7K" secondAttribute="width" id="Ece-lv-lTs"/>
                             <constraint firstItem="3vt-ld-h7K" firstAttribute="top" secondItem="hAU-cv-8HX" secondAttribute="bottom" constant="30" id="GBh-V9-oQt"/>
+                            <constraint firstItem="ga6-lj-OE4" firstAttribute="top" secondItem="2L5-mQ-fNK" secondAttribute="bottom" constant="10" id="OMK-lu-Ox5"/>
                             <constraint firstItem="3vt-ld-h7K" firstAttribute="width" secondItem="hAU-cv-8HX" secondAttribute="width" id="T4X-gs-WzU"/>
                             <constraint firstItem="hAU-cv-8HX" firstAttribute="centerX" secondItem="hPe-s6-hCb" secondAttribute="centerX" id="hLc-lM-hZY"/>
+                            <constraint firstItem="ga6-lj-OE4" firstAttribute="centerX" secondItem="hPe-s6-hCb" secondAttribute="centerX" id="kM5-XD-uAG"/>
                             <constraint firstItem="3vt-ld-h7K" firstAttribute="centerX" secondItem="hPe-s6-hCb" secondAttribute="centerX" id="kxJ-1w-dhA"/>
                             <constraint firstItem="hAU-cv-8HX" firstAttribute="top" secondItem="rxS-67-gW2" secondAttribute="bottom" constant="20" id="umg-lE-1GK"/>
                             <constraint firstItem="2L5-mQ-fNK" firstAttribute="centerX" secondItem="hPe-s6-hCb" secondAttribute="centerX" id="xbb-01-mOd"/>
@@ -117,8 +127,10 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addUpdateBtn" destination="2L5-mQ-fNK" id="3vn-oI-wHa"/>
                         <outlet property="collectionImage" destination="hAU-cv-8HX" id="egU-LA-BPZ"/>
                         <outlet property="collectionTitleTxtField" destination="3vt-ld-h7K" id="BmY-Fo-BAo"/>
+                        <outlet property="deleteBtn" destination="ga6-lj-OE4" id="hcb-Fr-E2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eH5-kB-uGa" userLabel="First Responder" sceneMemberID="firstResponder"/>

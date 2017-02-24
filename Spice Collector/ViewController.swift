@@ -45,6 +45,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let spice = spices[indexPath.row]
+        performSegue(withIdentifier: "spiceSegue", sender: spice)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! CollectionViewController
+        nextVC.spice = sender as? Spice
+    }
 
 }
 
